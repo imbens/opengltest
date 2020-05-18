@@ -199,6 +199,11 @@ InitX11 ()
 #else // kUseEGL
     glXMakeCurrent (mDisplay, mWindow, mContext);
 #endif // kUseEGL
+    const char *vendor = (const char *)glGetString(GL_VENDOR);
+    const char *renderer = (const char *)glGetString(GL_RENDERER);
+    const char *version = (const char *)glGetString(GL_VERSION);
+    printf ("GL Vendor: %s\nGL Renderer: %s\nGL Version: %s\n", vendor, renderer, version);
+
 }
 
 int main(void)
